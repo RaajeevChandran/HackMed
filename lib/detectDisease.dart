@@ -52,11 +52,7 @@ class _DetectDiseaseState extends State<DetectDisease> {
     super.initState();
     _loading = true;
 
-    loadModel().then((value) {
-      setState(() {
-        _loading = false;
-      });
-    });
+    
   }
 
   
