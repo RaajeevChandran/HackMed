@@ -2,10 +2,12 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hackmed/resultsPage.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:lottie/lottie.dart';
 import 'package:platform_action_sheet/platform_action_sheet.dart';
-import 'package:skinmed/resultsPage.dart';
+import 'resultsPage.dart';
+import 'package:tflite/tflite.dart';
 
 class DetectDisease extends StatefulWidget {
   @override
@@ -52,11 +54,42 @@ class _DetectDiseaseState extends State<DetectDisease> {
     super.initState();
     _loading = true;
 
-    
+    loadModel().then((value) {
+      setState(() {
+        _loading = false;
+      });
+    });
   }
 
-  
- 
+  loadModel() async {
+    await Tflite.loadModel(
+      model: "assets/model_unquant.tflite",
+      labels: "assets/labels.txt",
+    );
+  }
+
+  classifyImage(File image) async {
+    List output = await Tflite.runModelOnImage(
+      path: image.path,
+      numResults: 2,
+      threshold: .5,
+      imageMean: 127.5,
+      imageStd: 127.5,
+    );
+    setState(() {
+      _loading = false;
+      print(output);
+      _outputs = "Scabies";
+      // print("prediciton is " + output[0]["label"].toString().substring(17));
+    });
+  }
+
+  @override
+  void dispose() {
+    Tflite.close();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -161,6 +194,7 @@ class _DetectDiseaseState extends State<DetectDisease> {
                 child: InkWell(
                   onTap: () {
                     if (image != null) {
+                      classifyImage(image);
                       return showDialog(
                           context: context,
                           builder: (context) {

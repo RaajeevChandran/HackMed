@@ -1,0 +1,34 @@
+Probable disease: Acanthosis Nigricans
+Probable disease: Accessory Nipple
+Probable disease: Accessory Trachus
+Probable disease: Acne Kleoidalis
+Probable disease: Acromegaly
+Probable disease: Allergic Contact Dermatitis
+Probable disease: Athlete's Foot
+Probable disease: Atopic Dermatitis
+Probable disease: Black Hairy Tongue
+Probable disease: Bullous Pemphigoid
+Probable disease: Chromomycosis
+Probable disease: Coxsackie
+Probable disease: Cylinderoma
+Probable disease: Dermatomyositis
+Probable disease: Duhring
+Probable disease: Erythema Annulare Centrifugum
+Probable disease: Exanthem
+Probable disease: Granuloma
+Probable disease: Hydrocystoma
+Probable disease: Id Reaction
+Probable disease: Incontinentia Pigmenti
+Probable disease: Kyrie
+Probable disease: Larva Migrans
+Probable disease: Mycobacterium Fortuitum Infection
+Probable disease: Necrobiosis Lipoidica
+Probable disease: Scabies
+Probable disease: Tinea Capitis
+Probable disease: Wart
+Probable disease: Acne Vulgaris
+Probable disease: Eczema
+Probable disease: Pyoderma
+Probable disease: Chicken Pox
+Probable disease: Elephantiasis
+Probable disease: Melanonychia
