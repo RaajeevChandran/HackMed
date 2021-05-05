@@ -49,7 +49,7 @@ class _ResultsPageState extends State<ResultsPage> {
     super.initState();
   }
 
-  var googlePlace = GooglePlace('AIzaSyBXvdv5ERqDG3Me5XkKsEldWfPP3prOvsE');
+  var googlePlace = GooglePlace('');
   Map<int, Uint8List> images = {};
   @override
   Widget build(BuildContext context) {
